@@ -9,13 +9,7 @@ fi
 export EMAIL=dablak@gmail.com
 
 # System-wide .bashrc file for interactive bash(1) shells.
-umask 0027
-
-# To enable the settings / commands in this file for login shells as well,
-# this file has to be sourced in /etc/profile.
-
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+#umask 0027
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -66,14 +60,17 @@ alias cp="cp -iv"
 alias mv="mv -iv"
 alias rm="rm -iv"
 
+# security aliases
+alias findWorldWritableFiles='find . -xdev -type d \( -perm -0002 -a ! -perm -1000 \) -print'
+alias findNoOwnerFiles='find . -xdev \( -nouser -o -nogroup \) -print'
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# security aliases
-alias findWorldWritableFiles='find . -xdev -type d \( -perm -0002 -a ! -perm -1000 \) -print'
-alias findNoOwnerFiles='find . -xdev \( -nouser -o -nogroup \) -print'
+# Django commands
+alias dshell='python2.7 manage.py shell'
 
 ##################################################
 # Fancy PWD display function
