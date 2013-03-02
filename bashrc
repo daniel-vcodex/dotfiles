@@ -5,7 +5,7 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# Default permisions for new files
+# Default permisions mask for new files
 umask 0027
 
 # Vi command line style editing
