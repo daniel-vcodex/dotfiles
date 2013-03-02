@@ -1,0 +1,9 @@
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = http://github.com/ervandew/supertab
+[submodule "bundle/fugitive"]
+	path = bundle/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/fugitive"]
+	path = vim/bundle/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
