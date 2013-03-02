@@ -1,5 +1,8 @@
 # .bashrc
 
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
@@ -13,10 +16,10 @@ umask 0027
 
 # append to the history file, don't overwrite it
 shopt -s histappend
-
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=10000
 HISTFILESIZE=20000
+HISTCONTROL=ignoredups:ignorespace
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -43,37 +46,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval         "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# I like confirming destructive operations.
-alias cp="cp -iv"
-alias mv="mv -iv"
-alias rm="rm -iv"
-
-# security aliases
-alias findWorldWritableFiles='find . -xdev -type d \( -perm -0002 -a ! -perm -1000 \) -print'
-alias findNoOwnerFiles='find . -xdev \( -nouser -o -nogroup \) -print'
-
-# ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# virtualenv aliases
-alias cdv='cd $VIRTUAL_ENV'
-
-# Django aliases
-alias dshell='python manage.py shell'
 
 ##################################################
 # Fancy PWD display function
@@ -152,6 +124,11 @@ bash_prompt() {
 PROMPT_COMMAND=bash_prompt_command
 bash_prompt
 unset bash_prompt
+
+# Source aliases
+if [ -f ~/.bash_aliases ]; then
+	. ~/.bash_aliases
+fi
 
 # Source local machine definitions
 if [ -f ~/.bashrc_local ]; then
