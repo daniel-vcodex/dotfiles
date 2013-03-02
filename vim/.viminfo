@@ -9,13 +9,13 @@
 ~H
 # Command Line History (newest to oldest):
 :qa
-:close
-:Gstatus
 :w
-:Gcommit
-:1b
 :wqa
 :q
+:close
+:Gstatus
+:Gcommit
+:1b
 
 # Search String History (newest to oldest):
 
@@ -27,16 +27,45 @@
 
 # Registers:
 ""1	LINE	0
-	vim/
+	
+"2	LINE	0
+	let g:SuperTabDefaultCompletionType="context"
+"3	LINE	0
+	" supertab
+"4	LINE	0
+		url = http://github.com/ervandew/supertab
+"5	LINE	0
+	[submodule "vim/bundle/supertab"]
+"6	LINE	0
+		url = http://github.com/ervandew/supertab
+"7	LINE	0
+		path = vim/bundle/supertab
+"8	LINE	0
+	[submodule "vim/bundle/supertab"]
+"9	LINE	0
+		url = http://github.com/ervandew/supertab
+"-	CHAR	0
+	 
 
 # File marks:
-'0  7  0  ~/dotfiles/vimrc
-'1  1  0  ~/dotfiles/.git/index
-'2  8  0  ~/dotfiles/vimrc
-'3  1  0  ~/dotfiles/.gitignore
+'0  365  0  ~/dotfiles/vimrc
+'1  1  0  ~/dotfiles/test.css
+'2  204  46  ~/dotfiles/vimrc
+'3  12  0  ~/dotfiles/.git/config
+'4  1  0  ~/dotfiles/.gitmodules
+'5  7  0  ~/dotfiles/vimrc
+'6  1  0  ~/dotfiles/.git/index
+'7  8  0  ~/dotfiles/vimrc
+'8  1  0  ~/dotfiles/.gitignore
 
 # Jumplist (newest first):
+-'  365  0  ~/dotfiles/vimrc
+-'  204  46  ~/dotfiles/vimrc
+-'  1  0  ~/dotfiles/test.css
 -'  7  0  ~/dotfiles/vimrc
+-'  12  0  ~/dotfiles/.git/config
+-'  1  0  ~/dotfiles/.git/config
+-'  1  0  ~/dotfiles/.gitmodules
 -'  6  73  ~/dotfiles/vim/colors/tango2.vim
 -'  8  0  ~/dotfiles/vimrc
 -'  1  0  ~/dotfiles/.git/index
@@ -50,18 +79,110 @@
 -'  1  0  ~/dotfiles/.gitignore
 -'  1  0  ~/dotfiles/.gitignore
 -'  1  0  ~/dotfiles/.gitignore
+-'  6  73  ~/dotfiles/vim/colors/tango2.vim
+-'  1  0  ~/dotfiles/.git/index
+-'  7  0  ~/dotfiles/.git/index
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  6  73  ~/dotfiles/vim/colors/tango2.vim
+-'  1  0  ~/dotfiles/.git/index
+-'  7  0  ~/dotfiles/.git/index
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  6  73  ~/dotfiles/vim/colors/tango2.vim
+-'  1  0  ~/dotfiles/.git/index
+-'  7  0  ~/dotfiles/.git/index
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  6  73  ~/dotfiles/vim/colors/tango2.vim
+-'  1  0  ~/dotfiles/.git/index
+-'  7  0  ~/dotfiles/.git/index
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  6  73  ~/dotfiles/vim/colors/tango2.vim
+-'  1  0  ~/dotfiles/.git/index
+-'  7  0  ~/dotfiles/.git/index
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  6  73  ~/dotfiles/vim/colors/tango2.vim
+-'  1  0  ~/dotfiles/.git/index
+-'  7  0  ~/dotfiles/.git/index
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  12  0  ~/dotfiles/.git/config
+-'  1  0  ~/dotfiles/.git/config
+-'  1  0  ~/dotfiles/.gitmodules
+-'  6  73  ~/dotfiles/vim/colors/tango2.vim
+-'  1  0  ~/dotfiles/.git/index
+-'  7  0  ~/dotfiles/.git/index
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/test.css
 
 # Buffer list:
-%~/dotfiles/vimrc	7	0
-%~/dotfiles/vim/colors/tango2.vim	6	73
+%~/dotfiles/vimrc	365	0
 
 # History of marks within files (newest to oldest):
 
 > ~/dotfiles/vimrc
-	"	7	0
-	^	8	0
-	.	8	0
+	"	365	0
+	^	205	0
+	.	204	0
 	+	8	0
+	+	204	0
+	+	204	0
+
+> ~/dotfiles/test.css
+	"	1	0
+	.	1	0
+	+	1	0
+	+	1	0
+
+> ~/dotfiles/.git/config
+	"	12	0
+	.	12	0
+	+	12	0
+
+> ~/dotfiles/.gitmodules
+	"	1	0
+	.	1	0
+	+	1	0
 
 > ~/dotfiles/.git/index
 	"	1	0
