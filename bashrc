@@ -5,6 +5,9 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+# Vi command line style editing
+set -o vi
+
 # User specific aliases and functions
 export EMAIL=dablak@gmail.com
 
