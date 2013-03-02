@@ -5,14 +5,11 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+# Default permisions for new files
+umask 0027
+
 # Vi command line style editing
 set -o vi
-
-# User specific aliases and functions
-export EMAIL=dablak@gmail.com
-
-# System-wide .bashrc file for interactive bash(1) shells.
-#umask 0027
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -67,13 +64,16 @@ alias rm="rm -iv"
 alias findWorldWritableFiles='find . -xdev -type d \( -perm -0002 -a ! -perm -1000 \) -print'
 alias findNoOwnerFiles='find . -xdev \( -nouser -o -nogroup \) -print'
 
-# some more ls aliases
+# ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# Django commands
-alias dshell='python2.7 manage.py shell'
+# virtualenv aliases
+alias cdv='cd $VIRTUAL_ENV'
+
+# Django aliases
+alias dshell='python manage.py shell'
 
 ##################################################
 # Fancy PWD display function
@@ -153,3 +153,7 @@ PROMPT_COMMAND=bash_prompt_command
 bash_prompt
 unset bash_prompt
 
+# Source local machine definitions
+if [ -f ~/.bashrc_local ]; then
+	. ~/.bashrc_local
+fi
