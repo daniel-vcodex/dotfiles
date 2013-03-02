@@ -9,7 +9,7 @@ fi
 umask 0027
 
 # Vi command line style editing
-set -o vi
+#set -o vi
 
 # append to the history file, don't overwrite it
 shopt -s histappend

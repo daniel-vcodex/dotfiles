@@ -80,9 +80,9 @@ set tm=500
 
 " Enable syntax highlighting
 syntax enable
-
 set background=dark
-colorscheme desert
+colorscheme tango2
+
 
 " Set extra options when running in GUI mode
 if has("gui_running")
