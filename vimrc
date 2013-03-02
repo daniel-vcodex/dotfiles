@@ -1,48 +1,12 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer: 
-"       Amir Salihefendic
-"       http://amix.dk - amix@amix.dk
-"
-" Version: 
-"       5.0 - 29/05/12 15:43:36
-"
-" Blog_post: 
-"       http://amix.dk/blog/post/19691#The-ultimate-Vim-configuration-on-Github
-"
-" Awesome_version:
-"       Get this config, nice color schemes and lots of plugins!
-"
-"       Install the awesome version from:
-"
-"           https://github.com/amix/vimrc
-"
-" Syntax_highlighted:
-"       http://amix.dk/vim/vimrc.html
-"
-" Raw_version: 
-"       http://amix.dk/vim/vimrc.txt
-"
-" Sections:
-"    -> General
-"    -> VIM user interface
-"    -> Colors and Fonts
-"    -> Files and backups
-"    -> Text, tab and indent related
-"    -> Visual mode related
-"    -> Moving around, tabs and buffers
-"    -> Status line
-"    -> Editing mappings
-"    -> vimgrep searching and cope displaying
-"    -> Spell checking
-"    -> Misc
-"    -> Helper functions
-"
+" NOTE: most of this configuration has been copied from:
+" https://github.com/amix/vimrc   
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocp
 
+" Pathogen
+execute pathogen#infect()
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
 set history=700
 
@@ -61,21 +25,19 @@ let g:mapleader = ","
 " Fast saving
 nmap <leader>w :w!<cr>
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => VIM user interface
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set 7 lines to the cursor - when moving vertically using j/k
-set so=7
-
-" Turn on the WiLd menu
+" Turn on the WiLd menu. See http://vim.wikia.com/wiki/Great_wildmode/wildmenu_and_console_mouse
 set wildmenu
-
-" Ignore compiled files
+set wildmode=list:longest,full
 set wildignore=*.o,*~,*.pyc
+
+" select when using the mouse
+set selectmode=mouse
 
 "Always show current position
 set ruler
+
+" show (partial) commands
+set showcmd
 
 " Height of the command bar
 set cmdheight=2
@@ -116,15 +78,11 @@ set novisualbell
 set t_vb=
 set tm=500
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors and Fonts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable
 
-colorscheme desert
 set background=dark
+colorscheme desert
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -132,6 +90,8 @@ if has("gui_running")
     set guioptions+=e
     set t_Co=256
     set guitablabel=%M\ %t
+    " enable use of mouse
+    set mouse=a
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -141,18 +101,13 @@ set encoding=utf8
 set ffs=unix,dos,mac
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files, backups and undo
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
+set nowritebackup
 set nowb
 set noswapfile
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Text, tab and indent related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use spaces instead of tabs
 set expandtab
 
@@ -172,18 +127,12 @@ set si "Smart indent
 set wrap "Wrap lines
 
 
-""""""""""""""""""""""""""""""
-" => Visual mode related
-""""""""""""""""""""""""""""""
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :call VisualSelection('f')<CR>
 vnoremap <silent> # :call VisualSelection('b')<CR>
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Moving around, tabs, windows and buffers
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Treat long lines as break lines (useful when moving around in them)
 map j gj
 map k gk
@@ -233,37 +182,28 @@ autocmd BufReadPost *
      \   exe "normal! g`\"" |
      \ endif
 " Remember info about open buffers on close
-set viminfo^=%
+set viminfo=%,'50,\"100,:100,n~/.vim/.viminfo
 
 
-""""""""""""""""""""""""""""""
-" => Status line
-""""""""""""""""""""""""""""""
 " Always show the status line
 set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+set statusline =\ %{HasPaste()}
+set statusline +=\ %n\             "buffer number
+set statusline +=%{&ff}            "file format
+set statusline +=%y                "file type
+set statusline +=\ %<%F            "full path
+set statusline +=%m                "modified flag
+set statusline +=%=%5l             "current line
+set statusline +=/%L               "total lines
+set statusline +=%4v\              "virtual column number
+set statusline +=0x%04B\           "character under cursor
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Editing mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remap VIM 0 to first non-blank character
 map 0 ^
-
-" Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
-if has("mac") || has("macunix")
-  nmap <D-j> <M-j>
-  nmap <D-k> <M-k>
-  vmap <D-j> <M-j>
-  vmap <D-k> <M-k>
-endif
 
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 func! DeleteTrailingWS()
@@ -275,9 +215,6 @@ autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vimgrep searching and cope displaying
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " When you press gv you vimgrep after the selected text
 vnoremap <silent> gv :call VisualSelection('gv')<CR>
 
@@ -307,9 +244,6 @@ map <leader>n :cn<cr>
 map <leader>p :cp<cr>
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Spell checking
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
@@ -320,9 +254,6 @@ map <leader>sa zg
 map <leader>s? z=
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Misc
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
@@ -333,9 +264,6 @@ map <leader>q :e ~/buffer<cr>
 map <leader>pp :setlocal paste!<cr>
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Helper functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
     emenu Foo.Bar
@@ -394,7 +322,7 @@ function! <SID>BufcloseCloseIt()
 endfunction
 
 " viminfo stores the the state of your previous editing session
-set viminfo+=n~/.vim/viminfo
+" set viminfo+=n~/.vim/viminfo
 
 if exists("+undofile")
 " undofile - This allows you to use undos after exiting and restarting
@@ -408,4 +336,30 @@ if exists("+undofile")
   set undodir+=~/.vim/undo//
   set undofile
 endif
+
+" Buffer Explorer
+map <C-e> :BufExplorer<cr>
+map <f9> :BufExplorer<cr>
+map <S-f9> :HSBufExplorer<cr>
+map <C-f9> :VSBufExplorer<cr>
+" FileExplorer
+map <f8> :e %:p:h/<cr>
+map <S-f8> :Sex %:p:h/<cr>
+map <C-f8> :Vex %:p:h/<cr>
+
+" Autocompletion
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType c set omnifunc=ccomplete#Complete
+autocmd FileType cpp set omnifunc=ccomplete#Complete
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType perl setlocal expandtab ts=4
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType sgml set omnifunc=xmlcomplete#CompleteTags
+
+" Supertab
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabRetainCompletionType = 0
 

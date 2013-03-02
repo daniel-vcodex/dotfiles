@@ -9,7 +9,11 @@
 ~H
 # Command Line History (newest to oldest):
 :qa
+:close
 :Gstatus
+:w
+:Gcommit
+:1b
 :wqa
 :q
 
@@ -26,34 +30,44 @@
 	vim/
 
 # File marks:
-'0  1  0  ~/dotfiles/.git/index
-'1  8  0  ~/dotfiles/vimrc
-'2  1  0  ~/dotfiles/.gitignore
+'0  7  0  ~/dotfiles/vimrc
+'1  1  0  ~/dotfiles/.git/index
+'2  8  0  ~/dotfiles/vimrc
+'3  1  0  ~/dotfiles/.gitignore
 
 # Jumplist (newest first):
+-'  7  0  ~/dotfiles/vimrc
+-'  6  73  ~/dotfiles/vim/colors/tango2.vim
+-'  8  0  ~/dotfiles/vimrc
 -'  1  0  ~/dotfiles/.git/index
 -'  7  0  ~/dotfiles/.git/index
--'  8  0  ~/dotfiles/vimrc
 -'  1  0  ~/dotfiles/.gitignore
 -'  1  0  ~/dotfiles/vimrc
 -'  1  0  ~/dotfiles/.gitignore
 -'  1  0  ~/dotfiles/.gitignore
 -'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
+-'  1  0  ~/dotfiles/.gitignore
 
 # Buffer list:
-%~/dotfiles/vimrc	8	0
-%~/dotfiles/.git/index	1	0
+%~/dotfiles/vimrc	7	0
+%~/dotfiles/vim/colors/tango2.vim	6	73
 
 # History of marks within files (newest to oldest):
 
 > ~/dotfiles/vimrc
-	"	8	0
+	"	7	0
 	^	8	0
 	.	8	0
 	+	8	0
 
 > ~/dotfiles/.git/index
 	"	1	0
+
+> ~/dotfiles/vim/colors/tango2.vim
+	"	6	73
 
 > ~/dotfiles/.gitignore
 	"	1	0
