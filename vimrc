@@ -5,7 +5,10 @@
 set nocp
 
 " Pathogen
-execute pathogen#infect()
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
+syntax on
 
 " Sets how many lines of history VIM has to remember
 set history=700
@@ -366,3 +369,12 @@ let g:SuperTabRetainCompletionType = 0
 " CloseTag
 autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+
+" python mode
+" Load show documentation plugin
+let g:pymode_doc = 1
+
+" Key for show python documentation
+let g:pymode_doc_key = 'K'
+
+
