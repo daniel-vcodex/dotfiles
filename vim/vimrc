@@ -87,18 +87,15 @@ set tm=500
 " Enable syntax highlighting
 syntax enable
 set background=dark
-colorscheme tango2
+colorscheme pychimp
 
 
-" Set extra options when running in GUI mode
-if has("gui_running")
-    set guioptions-=T
-    set guioptions+=e
-    set t_Co=256
-    set guitablabel=%M\ %t
-    " enable use of mouse
-    set mouse=a
-endif
+" Set extra options GUI mode related
+set guioptions+=a
+set guioptions-=T
+set guioptions+=e
+set t_Co=256
+set guitablabel=%M\ %t
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -388,6 +385,7 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 
 
+
 " vimrc file for following the coding standards specified in PEP 7 & 8.
 "
 " To use this file, source it in your own personal .vimrc file (``source
@@ -461,7 +459,7 @@ au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
 " The following section contains suggested settings.  While in no way required
 " to meet coding standards, they are helpful.
 
-" Set the default file encoding to UTF-8: 
+" Set the default file encoding to UTF-8:
 set encoding=utf-8
 
 " Puts a marker at the beginning of the file to differentiate between UTF and
@@ -471,11 +469,12 @@ set encoding=utf-8
 " For full syntax highlighting:
 let python_highlight_all=1
 
-" Keep indentation level from previous line: 
+" Keep indentation level from previous line:
 set autoindent
 
-" Folding based on indentation: 
+" Folding based on indentation:
 "set foldmethod=indent
+set foldlevelstart=99
 
 " ----------------------------------------------------------------------------
 " End vimrc coding standards for PEP 7 & 8
