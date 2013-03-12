@@ -3,6 +3,7 @@
 set nocp
 
 " Pathogen
+execute pathogen#infect()
 filetype off
 call pathogen#infect()
 call pathogen#helptags()
@@ -474,7 +475,7 @@ let python_highlight_all=1
 set autoindent
 
 " Folding based on indentation: 
-set foldmethod=indent
+"set foldmethod=indent
 
 " ----------------------------------------------------------------------------
 " End vimrc coding standards for PEP 7 & 8
