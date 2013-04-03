@@ -100,7 +100,7 @@ set guioptions+=e
 set t_Co=256
 set guitablabel=%M\ %t
 " Enable use of the mouse for all modes
-set mouse=a
+"set mouse=a
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
