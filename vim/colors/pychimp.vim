@@ -46,7 +46,7 @@ hi Character   ctermfg=142  ctermbg=NONE  cterm=NONE
 hi Visual      ctermfg=253  ctermbg=235   cterm=NONE
 hi VertSplit   ctermfg=232  ctermbg=244   cterm=NONE
 hi ErrorMsg    ctermfg=88   ctermbg=172   cterm=bold
-hi MatchParen  ctermfg=16   ctermbg=215   cterm=bold
+hi MatchParen  ctermfg=253  ctermbg=235   cterm=bold
 hi Folded      ctermfg=67   ctermbg=16    cterm=bold 
 hi FoldColumn  ctermfg=67   ctermbg=16    cterm=NONE
 hi LineNr      ctermfg=58   ctermbg=NONE  cterm=NONE
