@@ -15,6 +15,9 @@ alias cp="cp -iv"
 alias mv="mv -iv"
 alias rm="rm -iv"
 
+# Find TODO strings in files
+alias findTODO="egrep -Rwi --color 'TODO|FIXME|PENDING|<<<<<<<' ."
+
 # security
 alias findWorldWritableFiles='find . -xdev -type d \( -perm -0002 -a ! -perm -1000 \) -print'
 alias findNoOwnerFiles='find . -xdev \( -nouser -o -nogroup \) -print'
@@ -36,7 +39,6 @@ alias rmpyc='find . -name *.pyc -delete'
 # Django
 alias dshell='python manage.py shell'
 alias runserver='python manage.py runserver'
-alias syncdb='python manage.py syncdb'
 
 # Source local aliases
 if [ -f ~/.bash_aliases_local ]; then
