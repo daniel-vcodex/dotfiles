@@ -23,7 +23,7 @@ alias findWorldWritableFiles='find . -xdev -type d \( -perm -0002 -a ! -perm -10
 alias findNoOwnerFiles='find . -xdev \( -nouser -o -nogroup \) -print'
 
 # ls
-alias ll='ls -alF'
+alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
 
