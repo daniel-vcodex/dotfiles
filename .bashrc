@@ -125,6 +125,9 @@ PROMPT_COMMAND=bash_prompt_command
 bash_prompt
 unset bash_prompt
 
+# Pip
+PIP_DOWNLOAD_CACHE='/tmp/pip'
+
 # Source aliases
 if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases

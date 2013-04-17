@@ -1,0 +1,11 @@
+[user]
+    name = Daniel Blasco
+    email = projects@dablak.com
+[color]
+	ui = true
+[core]
+	editor = vim
+[alias]
+    st = status
+    ci = commit
+    co = checkout
