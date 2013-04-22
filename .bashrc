@@ -126,7 +126,12 @@ bash_prompt
 unset bash_prompt
 
 # Pip
-PIP_DOWNLOAD_CACHE='/tmp/pip'
+export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
+export PIP_DEFAULT_TIMEOUT=60
+export PIP_USE_MIRRORS=true
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+export PIP_RESPECT_VIRTUALENV=true
+eval "`pip completion --bash`"
 
 # Source aliases
 if [ -f ~/.bash_aliases ]; then
