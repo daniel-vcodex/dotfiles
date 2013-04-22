@@ -131,7 +131,6 @@ export PIP_DEFAULT_TIMEOUT=60
 export PIP_USE_MIRRORS=true
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
-eval "`pip completion --bash`"
 
 # Source aliases
 if [ -f ~/.bash_aliases ]; then
@@ -142,3 +141,5 @@ fi
 if [ -f ~/.bashrc_local ]; then
 	. ~/.bashrc_local
 fi
+
+eval "`pip completion --bash`"
