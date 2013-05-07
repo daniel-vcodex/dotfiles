@@ -125,6 +125,8 @@ PROMPT_COMMAND=bash_prompt_command
 bash_prompt
 unset bash_prompt
 
+export EDITOR=vim
+
 # Pip
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 export PIP_DEFAULT_TIMEOUT=60
