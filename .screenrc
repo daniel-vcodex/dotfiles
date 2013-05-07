@@ -1,0 +1,9 @@
+startup_message off # Disable the copyright page
+altscreen on # Clean the screen after editor exits
+termcapinfo xterm* ti@:te@ # enable SHIFT-PGUP / SHIFT-PGDOWN scroll
+defscrollback 30000 # Self-explain
+term xterm # Useful to avoid strange key behaviour in Emacs
+nonblock on # Tell  screen  how to deal with user interfaces (displays) that cease to accept output)
+vbell off # Disable visual bell
+msgwait 10 # Defines the time a message is displayed if screen  is not disturbed by other activity
+
