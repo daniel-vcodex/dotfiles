@@ -21,9 +21,9 @@ mv .screenrc .screenrc_bckp
 
 Create symbolic links:
 ```
-ln -ns dotfiles/bashrc .bashrc  
-ln -ns dotfiles/bashrc_aliases .bash_aliases  
-ln -ns dotfiles/vim .vim  
-ln -ns dotfiles/vim/vimrc .vimrc
+ln -ns dotfiles/.bashrc .bashrc 
+ln -ns dotfiles/.bash_aliases .bash_aliases 
+ln -ns dotfiles/vim .vim 
+ln -ns dotfiles/vim/.vimrc .vimrc
 ln -ns dotfiles/.screenrc .screenrc
 ```
