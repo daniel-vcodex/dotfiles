@@ -12,7 +12,7 @@ fi
 
 # I like confirming destructive operations.
 alias cp="cp -iv"
-alias mv="mv -iv"
+alias mv="mv -i"
 alias rm="rm -iv"
 
 # Find TODO strings in files

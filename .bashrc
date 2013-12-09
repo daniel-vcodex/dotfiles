@@ -9,7 +9,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # Default permisions mask for new files
-umask 0027
+#umask 0027
 
 # Vi command line style editing
 #set -o vi
@@ -131,7 +131,6 @@ export EDITOR=vim
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 export PIP_DEFAULT_TIMEOUT=60
 export PIP_USE_MIRRORS=true
-export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
 
 # Source aliases
