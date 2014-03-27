@@ -6,6 +6,7 @@ Collection of configuration files used in my home folder of Linux systems.
 
 To clone with the submodules:
 ```
+sudo apt-get update && sudo apt-get install -y git python-pip python-dev build-essential 
 cd $HOME  
 git clone --recursive https://github.com/dablak/dotfiles.git
 ```
