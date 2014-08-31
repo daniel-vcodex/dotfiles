@@ -143,4 +143,12 @@ if [ -f ~/.bashrc_local ]; then
 	. ~/.bashrc_local
 fi
 
+# Source other local machine definitions
+if [ -d ~/.bash_local ]; then
+    for f in `find ~/.bash_local -type f -printf "%p\n"|sort`
+    do
+	    . $f
+    done
+fi
+
 eval "`pip completion --bash`"
