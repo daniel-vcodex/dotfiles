@@ -145,9 +145,9 @@ fi
 
 # Source other local machine definitions
 if [ -d ~/.bash_local ]; then
-    for f in `find ~/.bash_local -type f -printf "%p\n"|sort`
+    for f in `find ~/.bash_local/ -type f -printf "%p\n"|sort`
     do
-	    . $f
+	    source $f
     done
 fi
 
