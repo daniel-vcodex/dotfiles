@@ -14,6 +14,7 @@ fi
 alias cp="cp -iv"
 alias mv="mv -i"
 alias rm="rm -iv"
+alias ..="cd .."
 
 # Find TODO strings in files
 alias findTODO="egrep -Rwi --color 'TODO|FIXME|PENDING|<<<<<<<' ."
