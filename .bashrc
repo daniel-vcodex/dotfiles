@@ -3,6 +3,9 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# Shellshock bug detection
+env x='() { :;}; echo "WARNING: SHELLSHOCK DETECTED"' bash --norc -c ':' 2>/dev/null;
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
