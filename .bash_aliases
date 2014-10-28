@@ -17,7 +17,7 @@ alias rm="rm -iv"
 alias ..="cd .."
 
 # Screen
-alias kill_all_screens = screen -ls | grep -i detached | cut -d. -f1 | awk '{print $1}' | xargs kill
+alias kill_all_screens="screen -ls | grep -i detached | cut -d. -f1 | awk '{print $1}' | xargs kill"
 
 
 # Find TODO strings in files
