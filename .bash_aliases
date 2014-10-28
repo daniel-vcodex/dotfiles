@@ -16,6 +16,10 @@ alias mv="mv -i"
 alias rm="rm -iv"
 alias ..="cd .."
 
+# Screen
+alias kill_all_screens = screen -ls | grep detached | cut -d. -f1 | awk '{print $1}' | xargs kill
+
+
 # Find TODO strings in files
 alias findTODO="egrep -Rwi --color 'TODO|FIXME|PENDING|<<<<<<<' ."
 
