@@ -131,10 +131,8 @@ unset bash_prompt
 export EDITOR=vim
 
 # Pip
-export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
-export PIP_DEFAULT_TIMEOUT=60
-export PIP_USE_MIRRORS=true
 export PIP_RESPECT_VIRTUALENV=true
+
 
 # Source aliases
 if [ -f ~/.bash_aliases ]; then
