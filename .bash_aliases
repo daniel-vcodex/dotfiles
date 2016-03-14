@@ -37,6 +37,7 @@ alias rmsvndirs='rm -irf `find . -type d -name .svn`'
 
 # pip
 alias pipupdateall="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
+alias pipuninstall="pip freeze | grep -v '^-e' | xargs pip uninstall -y"
 
 # virtualenv
 alias cdv='cd $VIRTUAL_ENV'
