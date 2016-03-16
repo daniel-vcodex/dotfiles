@@ -1,8 +1,5 @@
 # .bashrc
 
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
-
 # Shellshock bug detection
 env x='() { :;}; echo "WARNING: SHELLSHOCK DETECTED"' bash --norc -c ':' 2>/dev/null;
 
@@ -131,8 +128,6 @@ unset bash_prompt
 export EDITOR=vim
 
 # Pip
-export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
-export PIP_DEFAULT_TIMEOUT=60
 export PIP_USE_MIRRORS=true
 export PIP_RESPECT_VIRTUALENV=true
 
