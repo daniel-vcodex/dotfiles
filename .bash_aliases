@@ -16,6 +16,10 @@ alias mv="mv -i"
 alias rm="rm -iv"
 alias ..="cd .."
 
+# Screen
+alias kill_all_screens="screen -ls | grep -i detached | cut -d. -f1 | awk '{print $1}' | xargs kill"
+
+
 # Find TODO strings in files
 alias findTODO="egrep -Rwi --color 'TODO|FIXME|PENDING|<<<<<<<' ."
 
@@ -33,6 +37,7 @@ alias rmsvndirs='rm -irf `find . -type d -name .svn`'
 
 # pip
 alias pipupdateall="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
+alias pipuninstall="pip freeze | grep -v '^-e' | xargs pip uninstall -y"
 
 # virtualenv
 alias cdv='cd $VIRTUAL_ENV'
