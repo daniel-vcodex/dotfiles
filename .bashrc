@@ -149,4 +149,4 @@ if [ -d ~/.bash_local ]; then
     done
 fi
 
-eval "`pip completion --bash`"
+#eval "`pip completion --bash`"

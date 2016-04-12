@@ -49,6 +49,9 @@ alias rmpyc='find . -name *.pyc -delete'
 alias dshell='python manage.py shell'
 alias runserver='python manage.py runserver'
 
+# NPM
+alias npm-exec='PATH=$(npm bin):$PATH'
+
 # Source local aliases
 if [ -f ~/.bash_aliases_local ]; then
 	. ~/.bash_aliases_local
