@@ -54,5 +54,5 @@ alias npm-exec='PATH=$(npm bin):$PATH'
 
 # Source local aliases
 if [ -f ~/.bash_aliases_local ]; then
-	. ~/.bash_aliases_local
+	source ~/.bash_aliases_local
 fi
