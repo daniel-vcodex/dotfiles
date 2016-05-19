@@ -5,7 +5,7 @@ env x='() { :;}; echo "WARNING: SHELLSHOCK DETECTED"' bash --norc -c ':' 2>/dev/
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+	source /etc/bashrc
 fi
 
 # Default permisions mask for new files
@@ -133,12 +133,12 @@ export PIP_RESPECT_VIRTUALENV=true
 
 # Source aliases
 if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
+	source ~/.bash_aliases
 fi
 
 # Source local machine definitions
 if [ -f ~/.bashrc_local ]; then
-	. ~/.bashrc_local
+	source ~/.bashrc_local
 fi
 
 # Source other local machine definitions
