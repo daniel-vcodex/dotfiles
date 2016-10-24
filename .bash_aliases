@@ -40,6 +40,7 @@ alias pipupdateall="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs
 
 # virtualenv
 alias cdv='cd $VIRTUAL_ENV'
+alias wo='workon'
 
 # Python
 alias rmpyc='find . -name *.pyc -delete'
