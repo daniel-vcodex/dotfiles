@@ -37,6 +37,7 @@ alias rmsvndirs='rm -irf `find . -type d -name .svn`'
 
 # pip
 alias pipupdateall="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
+alias pipuninstall="pip freeze | grep -v '^-e' | xargs pip uninstall -y"
 
 # virtualenv
 alias cdv='cd $VIRTUAL_ENV'
@@ -49,7 +50,10 @@ alias rmpyc='find . -name *.pyc -delete'
 alias dshell='python manage.py shell'
 alias runserver='python manage.py runserver'
 
+# NPM
+alias npm-exec='PATH=$(npm bin):$PATH'
+
 # Source local aliases
 if [ -f ~/.bash_aliases_local ]; then
-	. ~/.bash_aliases_local
+	source ~/.bash_aliases_local
 fi
