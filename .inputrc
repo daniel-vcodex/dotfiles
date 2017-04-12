@@ -1,0 +1,21 @@
+# Key bindings, up/down arrow searches through history
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+"\eOA": history-search-backward
+"\eOB": history-search-forward
+"\e[C": forward-char
+"\e[D": backward-char
+
+# Alt + arrow key to move by words
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+"\e[5C": forward-word
+"\e[5D": backward-word
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+
+set completion-ignore-case on
+set visible-stats on
+
+# none, visible or audible
+set bell-style none
