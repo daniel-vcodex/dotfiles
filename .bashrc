@@ -8,19 +8,6 @@ if [ -f /etc/bashrc ]; then
 	source /etc/bashrc
 fi
 
-# Default permisions mask for new files
-#umask 0027
-
-# Vi command line style editing
-#set -o vi
-
-# append to the history file, don't overwrite it
-shopt -s histappend
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000000
-HISTFILESIZE=1000000000
-HISTCONTROL=ignoredups:ignorespace
-
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -124,6 +111,14 @@ bash_prompt() {
 PROMPT_COMMAND=bash_prompt_command
 bash_prompt
 unset bash_prompt
+
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+export HISTSIZE=1000000  # big big history
+export HISTFILESIZE=1000000000  # big big history
+shopt -s histappend  # append to history, don't overwrite it
+
+# Save and reload the history after each command finishes
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 export EDITOR=vim
 
